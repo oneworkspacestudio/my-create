@@ -1,0 +1,1 @@
+saxes-6.0.0-ISC.txt is the unmodified upstream license from https://raw.githubusercontent.com/lddubeau/saxes/v6.0.0/LICENSE, absent from the installed npm tarball. Included for the optional jsdom dependency inventory; no Node runtime is shipped.
