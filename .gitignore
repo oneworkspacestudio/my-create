@@ -1,0 +1,9 @@
+node_modules/
+internal/webui/dist/
+dist/
+*.exe
+*.zip
+*.log
+*.sqlite*
+.env*
+/%SystemDrive%/

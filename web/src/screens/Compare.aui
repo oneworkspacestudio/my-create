@@ -1,0 +1,41 @@
+Page Compare
+  Card variant=dialog-wide aria-label="Compare imported design"
+    Alert tone=error $error
+    Row
+      Stack gap=xs
+        Heading level=2 "A new beginning for your design"
+        Text variant=caption $comparisonLabel
+      Spacer
+      Button action=closeCompare variant=secondary cancel=true "Close"
+    Row variant=compare-summary
+      Badge tone=info $pageCountLabel
+      Badge tone=success $objectCountLabel
+      Badge tone=warning $warningCountLabel
+      Select name=comparePage options=$comparePages aria-label="Comparison page"
+      Button action=compareRefresh variant=secondary "Show page"
+    Grid columns=2 variant=comparison
+      Stack gap=sm
+        Heading level=3 "Original / source reference"
+        Image src=$sourcePreview alt="Source reference"
+      Stack gap=sm
+        Heading level=3 "Editable reconstruction"
+        Image src=$resultPreview alt="Editable reconstruction"
+    Field label="Overlay comparison"
+      Input name=overlay type=range min=0 max=100
+    Section variant=overlay
+      Image src=$sourcePreview alt="Source under overlay"
+      Image src=$resultPreview alt="Reconstruction overlay" variant=overlay-image
+    Text variant=caption $differenceLabel
+    For each=$warnings
+      Alert tone=warning $item
+    If condition=$missingFonts
+      Alert tone=warning $missingFontLabel
+      Field label="Substitute all missing fonts with"
+        Input name=substituteFont
+      Button action=substituteFonts variant=secondary "Preview font substitution"
+    Row
+      Button action=acceptImport "Open in editor"
+      If condition=$canRerun
+        Select name=mode options=$modes aria-label="Rerun mode"
+        Button action=rerun variant=secondary "Rerun import"
+      Button action=downloadReport variant=secondary "Download report"

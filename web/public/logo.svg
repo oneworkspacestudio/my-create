@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none" role="img" aria-labelledby="create-title">
+<title id="create-title">My Create</title>
+<defs><linearGradient id="create-blue" x1="38" y1="27" x2="215" y2="228" gradientUnits="userSpaceOnUse"><stop stop-color="#60A5FA"/><stop offset=".5" stop-color="#2563EB"/><stop offset="1" stop-color="#0B2A63"/></linearGradient><linearGradient id="create-paper" x1="65" y1="52" x2="189" y2="204" gradientUnits="userSpaceOnUse"><stop stop-color="#FFFFFF"/><stop offset="1" stop-color="#D6E5FF"/></linearGradient></defs>
+<rect x="26" y="24" width="192" height="208" rx="31" fill="url(#create-blue)"/>
+<rect x="49" y="48" width="146" height="158" rx="14" fill="url(#create-paper)"/>
+<rect x="65" y="66" width="71" height="11" rx="5.5" fill="#2563EB"/>
+<rect x="65" y="87" width="105" height="7" rx="3.5" fill="#60A5FA"/>
+<circle cx="93" cy="137" r="25" fill="#60A5FA"/>
+<path d="M117 170 139 125 172 170Z" fill="#2563EB"/>
+<path d="m133 197 10-37 67-68c6-6 15-6 21 0l7 7c6 6 6 15 0 21l-68 67-37 10Z" fill="#0B2A63"/>
+<path d="m141 188 8-24 64-64c3-3 7-3 10 0l7 7c3 3 3 7 0 10l-64 64-25 7Z" fill="#A9F1DA"/>
+<path d="m202 111 18 18" stroke="#2563EB" stroke-width="7"/>
+</svg>

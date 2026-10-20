@@ -1,0 +1,73 @@
+Page Dialog
+  Card variant=dialog aria-label=$dialogTitle
+    Alert tone=error $error
+    Row
+      Heading level=2 $dialogTitle
+      Spacer
+      Button action=closeDialog variant=icon cancel=true aria-label="Close dialog" "×"
+    If condition=$newDialog
+      Field label="Design name"
+        Input name=newTitle
+      Row
+        Field label="Width in pixels"
+          Input name=newWidth type=number min=1 max=16000
+        Field label="Height in pixels"
+          Input name=newHeight type=number min=1 max=16000
+      Button action=createBlank "Create design"
+    If condition=$exporting
+      Text "Download the current page, or keep every page editable in a portable project pack."
+      Button action=exportPNG "Download PNG"
+      Button action=exportSVG variant=secondary "Download editable SVG"
+      Button action=exportPDF variant=secondary "Print / save pages as PDF"
+      Button action=exportPack variant=secondary "Download editable project pack"
+      Button action=saveCopy variant=secondary "Save as a new project"
+    If condition=$templating
+      Text "Add attribution for the design and every included asset. This saves privately or downloads a pack. It never publishes your content automatically."
+      Field label="Licence (for example CC0-1.0 or Private)"
+        Input name=license
+      Field label="Author"
+        Input name=author
+      Field label="Attribution and asset licences"
+        Input name=attribution multiline=true
+      Field label="Categories (comma separated)"
+        Input name=categories
+      Field label="Keywords (comma separated)"
+        Input name=keywords
+      Button action=saveTemplate "Save private template"
+      Button action=downloadTemplate variant=secondary "Download template pack"
+    If condition=$showRevisions
+      Text "Opening an earlier version does not erase later versions. Save it as a copy to keep both."
+      For each=$revisions
+        Row
+          Text $item.label
+          Spacer
+          Button action=openRevision item=$item.revision variant=secondary "Open as copy"
+    If condition=$reconstructing
+      Alert tone=info "Reconstruction makes guesses from visible pixels. Inferred text and shapes start hidden until you review them in the layer panel. The original pixels are never erased."
+      Button action=ocr "Recognize text with local Windows OCR"
+      Text variant=caption "PNG/JPEG sources only. Uses installed Windows recognition languages. No model download."
+      Button action=shapes variant=secondary "Detect simple colour rectangles"
+    If condition=$showReport
+      Text $reportSummary
+      For each=$warnings
+        Alert tone=warning $item
+      Button action=downloadReport variant=secondary "Download report"
+      Button action=original variant=secondary disabled=$noSource "Download preserved original"
+    If condition=$imageDialog
+      Input name=imageFile type=file accept="image/png,image/jpeg,image/webp"
+      Button action=insertImage "Use image"
+    If condition=$driveDialog
+      Text "Files are read and written with your own My Drive permissions. Save creates a new copy with the original source inside the project pack."
+      Select name=driveSource options=$driveSources aria-label="Drive source"
+      Field label="Folder path"
+        Input name=drivePath
+      Button action=driveList variant=secondary "Open folder"
+      For each=$driveFiles
+        Row
+          Text $item.name
+          Spacer
+          Button action=driveChoose item=$item.path variant=secondary $item.action
+      If condition=$savingDrive
+        Field label="New project pack name"
+          Input name=driveName
+        Button action=driveWrite "Save new copy here"

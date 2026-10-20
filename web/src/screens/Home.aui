@@ -1,0 +1,65 @@
+Page Home
+  Stack variant=content
+    Row variant=page-header
+      Stack gap=sm
+        Text variant=eyebrow "YOUR CREATIVE WORKSPACE"
+        Heading level=1 "Good ideas deserve a canvas."
+        Text variant=muted "Make something new. Or give an existing design a new beginning."
+      Button action=newDesign
+        Icon name=Plus
+        Text "New design"
+    Grid columns=2 variant=welcome
+      Card variant=import-hero
+        Badge tone=info "SMART IMPORT"
+        Heading level=2 "Bring your designs with you."
+        Text "Import editable text, shapes and layers from the files you already have. See what was recovered before you start creating."
+        Button action=import "Import a design"
+        Text variant=caption "SVG · PowerPoint · PDF · Images · Photoshop"
+      Card variant=creative-art
+        Text variant=eyebrow "A FRESH PERSPECTIVE"
+        Heading level=1 "Make it\nyours."
+        Text "Your words. Your colours. Your next idea."
+        Badge tone=success "Created locally, kept privately"
+    Row variant=section-header
+      Heading level=2 "Start with a little inspiration"
+      Spacer
+      Link href="https://github.com/oneworkspacestudio/my-create-templates" external=true "Template collection ↗"
+    Grid columns=3 variant=templates
+      For each=$starters
+        Card variant=template
+          Text variant=eyebrow $item.category
+          Heading level=2 $item.title
+          Text variant=muted $item.description
+          Button action=starter item=$item.id variant=secondary "Use this template"
+    Row variant=section-header
+      Heading level=2 "Your designs"
+      Spacer
+      Button action=refresh variant=secondary "Refresh"
+    If condition=$empty
+      Card variant=empty
+        Icon name=Layers
+        Heading level=3 "A place for every idea"
+        Text "Your saved designs and reusable templates will appear here."
+    Else
+      Grid columns=3
+        For each=$projects
+          Card variant=project
+            Row
+              Icon name=Layers
+              Badge $item.kind
+              Spacer
+              Text variant=caption $item.revisionLabel
+            Heading level=2 $item.name
+            Text variant=caption $item.date
+            Button action=openProject item=$item.id variant=secondary "Open design"
+    If condition=$hasSources
+      Card
+        Heading level=3 "Preserved source files"
+        Text variant=caption "Failed or cancelled conversions keep their originals. Reopen any source to try again."
+        For each=$sources
+          Row
+            Text $item.name
+            Badge $item.format
+            Spacer
+            Button action=retrySource item=$item.id variant=secondary "Import again"
+            Button action=downloadSource item=$item.id variant=secondary "Download original"

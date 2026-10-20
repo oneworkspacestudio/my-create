@@ -1,0 +1,208 @@
+{
+  "checks": [
+    {
+      "file": "editable.svg",
+      "pages": 1,
+      "objects": 9,
+      "texts": [
+        "ONE WORKSPACE STUDIO",
+        "Make it yours.",
+        "Editable text, real possibilities."
+      ],
+      "types": [
+        "Rect",
+        "Rect",
+        "Text",
+        "Text",
+        "Text",
+        "Group",
+        "Rect",
+        "Circle",
+        "Path"
+      ],
+      "warnings": [],
+      "pwned": false,
+      "reopened": true,
+      "meanPixelDifferencePercent": 0.16367444805070466
+    },
+    {
+      "file": "outlined.svg",
+      "pages": 1,
+      "objects": 1,
+      "texts": [],
+      "types": [
+        "Path"
+      ],
+      "warnings": [
+        "No editable text was found. Outlined lettering remains vector paths; OCR can only infer replacement text."
+      ],
+      "pwned": false,
+      "reopened": true,
+      "meanPixelDifferencePercent": 0
+    },
+    {
+      "file": "hostile.svg",
+      "pages": 1,
+      "objects": 1,
+      "texts": [
+        "Safe content"
+      ],
+      "types": [
+        "Text"
+      ],
+      "warnings": [
+        "Removed active SVG content",
+        "Removed unsupported or unsafe SVG <script>",
+        "Removed unsupported or unsafe SVG <foreignObject>",
+        "External SVG resources were removed; embed images before importing",
+        "Removed image without a safe embedded raster source"
+      ],
+      "pwned": false,
+      "reopened": true,
+      "meanPixelDifferencePercent": 0.0743551815257353
+    },
+    {
+      "file": "missing-font.svg",
+      "pages": 1,
+      "objects": 9,
+      "texts": [
+        "ONE WORKSPACE STUDIO",
+        "Make it yours.",
+        "Editable text, real possibilities."
+      ],
+      "types": [
+        "Rect",
+        "Rect",
+        "Text",
+        "Text",
+        "Text",
+        "Group",
+        "Rect",
+        "Circle",
+        "Path"
+      ],
+      "warnings": [],
+      "pwned": false,
+      "reopened": true,
+      "meanPixelDifferencePercent": 0.15453413421032475
+    },
+    {
+      "file": "groups-table.pptx",
+      "pages": 2,
+      "objects": 15,
+      "texts": [
+        "Your next idea",
+        "Real text. Editable layers.",
+        "First",
+        "Second",
+        "Editable",
+        "Table cells"
+      ],
+      "types": [
+        "Textbox",
+        "Textbox",
+        "Group",
+        "Rect",
+        "Ellipse",
+        "Image",
+        "Group",
+        "Rect",
+        "Textbox",
+        "Rect",
+        "Textbox",
+        "Rect",
+        "Textbox",
+        "Rect",
+        "Textbox"
+      ],
+      "warnings": [
+        "PPTX comparison is a reconstructed preview, not an independent PowerPoint rendering. Keep the original for fidelity review.",
+        "Table cells are editable text and shapes; merged cells and table styles are approximated"
+      ],
+      "pwned": false,
+      "reopened": true,
+      "meanPixelDifferencePercent": 0
+    },
+    {
+      "file": "vector-text-scan.pdf",
+      "pages": 2,
+      "objects": 10,
+      "texts": [
+        "Editable PDF text",
+        "Vectors and selectable text"
+      ],
+      "types": [
+        "Image",
+        "Path",
+        "Path",
+        "Image",
+        "Image",
+        "Textbox",
+        "Textbox",
+        "Image",
+        "Image",
+        "Image"
+      ],
+      "warnings": [
+        "PDF drawing commands are reconstructed objects, not original design layers. Font substitution, reading order, clipping and complex effects can differ.",
+        "Page 1: 3 vector objects, 2 text objects. Residual artwork is a raster layer; check overlap order and text colour.",
+        "Page 2 has no selectable text. Raster regions remain images; use optional OCR on a PNG export.",
+        "Page 2: 1 vector objects, 0 text objects. Residual artwork is a raster layer; check overlap order and text colour."
+      ],
+      "pwned": false,
+      "reopened": true,
+      "meanPixelDifferencePercent": 0.6459494198069853
+    },
+    {
+      "file": "flattened.png",
+      "pages": 1,
+      "objects": 1,
+      "texts": [],
+      "types": [
+        "Image"
+      ],
+      "warnings": [
+        "This image has no native editable text or shapes. The original remains a raster layer. Optional reconstruction creates inferred objects."
+      ],
+      "pwned": false,
+      "reopened": true,
+      "meanPixelDifferencePercent": 0
+    },
+    {
+      "file": "flattened.jpg",
+      "pages": 1,
+      "objects": 1,
+      "texts": [],
+      "types": [
+        "Image"
+      ],
+      "warnings": [
+        "This image has no native editable text or shapes. The original remains a raster layer. Optional reconstruction creates inferred objects."
+      ],
+      "pwned": false,
+      "reopened": true,
+      "meanPixelDifferencePercent": 0
+    },
+    {
+      "file": "flattened.webp",
+      "pages": 1,
+      "objects": 1,
+      "texts": [],
+      "types": [
+        "Image"
+      ],
+      "warnings": [
+        "This image has no native editable text or shapes. The original remains a raster layer. Optional reconstruction creates inferred objects."
+      ],
+      "pwned": false,
+      "reopened": true,
+      "meanPixelDifferencePercent": 0
+    },
+    {
+      "file": "generated.psd",
+      "objects": 1
+    }
+  ],
+  "hostileCasesRejected": 4,
+  "browserErrors": []
+}

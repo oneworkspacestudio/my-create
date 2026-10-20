@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "standalone": true,
+  "syntheticOnly": true,
+  "ownerUsedAsFixture": false,
+  "sourceBytesPreserved": true,
+  "editedTextReopened": true,
+  "revisionConflictInGoTests": true,
+  "positionUndoRedo": true,
+  "settingsNavigation": true,
+  "pngExport": true,
+  "desktopAndMobileNoOverflow": true,
+  "ocrEngine": "Windows.Media.Ocr",
+  "ocrLines": 2,
+  "browserErrors": []
+}

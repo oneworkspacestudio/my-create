@@ -1,0 +1,102 @@
+Page Editor
+  Stack variant=editor
+    Row variant=editor-toolbar
+      Button action=home variant=secondary aria-label="Back to designs" "← Designs"
+      Input name=title aria-label="Design name"
+      Badge $saveLabel
+      Spacer
+      Button action=undo variant=icon disabled=$noUndo aria-label="Undo" "↶"
+      Button action=redo variant=icon disabled=$noRedo aria-label="Redo" "↷"
+      Button action=compare variant=secondary "Compare"
+      Button action=save "Save design"
+      Button action=exportDialog variant=secondary "Export"
+    Row variant=canvas-tools
+      Button action=addText variant=secondary "＋ Text"
+      Button action=addRect variant=secondary "▢ Shape"
+      Button action=addCircle variant=secondary "○ Circle"
+      Button action=addImage variant=secondary "＋ Image"
+      Button action=group variant=secondary "Group"
+      Button action=ungroup variant=secondary "Ungroup"
+      Button action=duplicate variant=secondary "Duplicate"
+      Button action=delete variant=secondary "Delete"
+      Spacer
+      Button action=zoomOut variant=icon aria-label="Zoom out" "−"
+      Text variant=caption $zoomLabel
+      Button action=zoomIn variant=icon aria-label="Zoom in" "+"
+      Button action=fit variant=secondary "Fit"
+    Grid variant=editor-layout
+      Stack variant=layers-panel
+        Row
+          Heading level=3 "Layers"
+          Spacer
+          Badge $layerCount
+        Text variant=caption "Top layers appear in front. Shift-click to select several on the canvas."
+        For each=$layers
+          Button action=selectLayer item=$item.id variant=$item.variant
+            Text $item.label
+            Badge tone=$item.tone $item.kind
+        Divider
+        Button action=bringForward variant=secondary "Move forward"
+        Button action=sendBackward variant=secondary "Move backward"
+        Button action=toggleVisible variant=secondary "Show / hide layer"
+        Button action=toggleLock variant=secondary "Lock / unlock layer"
+      Stack variant=canvas-area
+        Section id=canvas-host
+        Row variant=page-strip
+          For each=$pages
+            Button action=page item=$item.id variant=$item.variant $item.name
+          Button action=addPage variant=secondary aria-label="Add page" "+"
+        Row
+          Text variant=caption $pageSize
+          Spacer
+          Button action=duplicatePage variant=secondary "Duplicate page"
+          Button action=deletePage variant=secondary disabled=$singlePage "Delete page"
+      Stack variant=properties-panel
+        Heading level=3 "Design details"
+        If condition=$hasSelection
+          Badge tone=$selectionTone $selectionKind
+          Text variant=caption $selectionEvidence
+          Field label="Layer name"
+            Input name=layerName
+          If condition=$isText
+            Field label="Text"
+              Input name=text multiline=true
+            Field label="Font family"
+              Input name=fontFamily
+            Field label="Font size"
+              Input name=fontSize type=number min=1 max=1000
+            Select name=fontWeight options=$weights aria-label="Font weight"
+            Select name=textAlign options=$alignments aria-label="Text alignment"
+          Field label="Colour"
+            Input name=fill type=color
+          Row
+            Field label="X"
+              Input name=left type=number
+            Field label="Y"
+              Input name=top type=number
+          Row
+            Field label="Width"
+              Input name=objectWidth type=number min=1
+            Field label="Height"
+              Input name=objectHeight type=number min=1
+          Row
+            Field label="Rotation"
+              Input name=angle type=number
+            Field label="Opacity %"
+              Input name=opacity type=number min=0 max=100
+          Button action=applyProperties "Apply changes"
+          If condition=$isImage
+            Button action=replaceImage variant=secondary "Replace image"
+          Button action=flatten variant=secondary "Flatten selected layer"
+        Else
+          Text variant=muted "Select a layer to change its words, colour or position. Drag the corner handles to resize."
+        Divider
+        Field label="Page background"
+          Input name=background type=color
+        Button action=background variant=secondary "Apply background"
+        Button action=report variant=secondary "Import report"
+        Button action=revisions variant=secondary "Saved versions"
+        Button action=reconstruct variant=secondary "Reconstruct image"
+        Button action=template variant=secondary "Save as template"
+        If condition=$hasDrive
+          Button action=driveSave variant=secondary "Save a copy to My Drive"

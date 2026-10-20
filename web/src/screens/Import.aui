@@ -1,0 +1,25 @@
+Page Import
+  Card variant=dialog aria-label="Import a design"
+    Alert tone=error $error
+    Row
+      Heading level=2 "Bring a design into My Create"
+      Spacer
+      Button action=closeDialog variant=icon cancel=true aria-label="Close import" "×"
+    Text variant=muted "Choose a file you have permission to use. Your original is preserved, even if conversion cannot finish."
+    Section id=drop-zone variant=drop-zone
+      Icon name=Layers
+      Text "Drop a design here, or choose a file"
+      Input name=importFile type=file accept=".svg,.pptx,.pdf,.png,.jpg,.jpeg,.webp,.psd,.mycreate,.zip"
+    Select name=mode options=$modes aria-label="Import mode"
+    Text variant=caption "Smart Editable retains supported objects. Preserve Appearance keeps a raster reference and hidden extracted objects. Maximum Editability includes uncertain objects for review."
+    Text variant=caption "Up to 32 MiB · 60 pages · Processed on this device and your Workspace server"
+    Row
+      Button action=convert "Import and review"
+      If condition=$hasDrive
+        Button action=driveOpen variant=secondary "Choose from My Drive"
+    If condition=$converting
+      Row
+        Spinner
+        Text $progress
+        Button action=cancelImport variant=secondary cancel=true "Cancel"
+    Alert tone=info "Canva designs: export SVG, PowerPoint or PDF from Canva, then choose that file here. Canva links and private catalogue assets are not imported."
