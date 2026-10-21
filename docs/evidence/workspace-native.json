@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "workspace": "0.3.0-preview.57",
+  "baseline": "0.3.0-preview.56",
+  "syntheticOnly": true,
+  "ownerDataUsedAsFixture": false,
+  "normalBackedUpUpdate": true,
+  "identityPathsAndSelectionsPreserved": true,
+  "existingAppPackagesPreserved": true,
+  "newCreatePortOffset": 27,
+  "myAccountsOIDC": true,
+  "retainedPortalSignIn": true,
+  "createTemplateSaved": true,
+  "myDriveSameSubject": true,
+  "myDriveNewCopyWritten": true,
+  "contentAddressedCreateIconSHA256": "a75dd6b3c3a39430f4c8e7a66c79175e7fd7481462761a35e0c1795757cd4134",
+  "browserErrors": []
+}

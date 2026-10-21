@@ -30,5 +30,18 @@ fixtures. Stop tracked preview PIDs and verify before cleanup.
 Workspace integration is on codex/my-create in the C workspace clone, rebased on
 origin/main eea959c (installed blue-branding56). Candidate Workspace57 adds create
 at base+27 without changing any existing app package/version. Separate template
-repo contains only three new CC0 packs. Publication/installation receipts and
-final immutable tags remain to be recorded after packaging and verification.
+repo contains only three new CC0 packs. Released v0.1.0-preview.1 from 2687e8a; all 4 public assets match local SHA-256.
+Workspace57 released from a401b4e and installed through its normal backed-up
+updater. All 25 apps are present and 24 service entries healthy; previous 24 app
+versions/packages, identities and paths preserved. Native synthetic suite upgrade
+proved retained sign-in, MyAccounts OIDC, correct port, saved project and same-user
+Drive new-copy writes. Local/public logo hashes match. Docs/evidence records the
+privacy-filtered publication and installation receipts. Installed Chat preview9
+was retained. Tags/assets are immutable.
+
+Operational note: stale global Git safe-directory entries for unavailable drives
+can stall Git when working on exFAT. Per-command GIT_CONFIG_GLOBAL=NUL and
+GIT_CONFIG_NOSYSTEM=1 with this exact safe.directory and explicit author identity
+worked; no global configuration was changed. Task-owned blocked diagnostic
+processes received termination requests; some Windows I/O waits did not exit.
+These are separate from the stopped synthetic app services.

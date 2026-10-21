@@ -1,0 +1,30 @@
+{
+  "repository": "oneworkspacestudio/my-create",
+  "tag": "v0.1.0-preview.1",
+  "draft": false,
+  "publishedAt": "2026-10-20T23:52:54Z",
+  "url": "https://github.com/oneworkspacestudio/my-create/releases/tag/v0.1.0-preview.1",
+  "everyPublishedAssetMatchesLocal": true,
+  "assets": [
+    {
+      "name": "my-create-0.1.0-preview.1-windows-amd64.zip",
+      "size": 7489165,
+      "sha256": "6b4dbeb08660e6ebdf12b98b67042ad00d6fe424d1b1c59f11eb2dc149c127be"
+    },
+    {
+      "name": "MyCreate.exe",
+      "size": 16156672,
+      "sha256": "53b0cd8a89e229320d7b8203e72efd0511f4e282098eae44ff9ff0d2318b7590"
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "size": 280,
+      "sha256": "fe59910e46e9056098b126c33380f6c8a88647aa7842010a396201fab82c45e2"
+    },
+    {
+      "name": "workspace-update.json",
+      "size": 2348,
+      "sha256": "8877d5a728e00d34efea1d16ac3bbd0cfec59a1d6540b8c9689b585443986580"
+    }
+  ]
+}
